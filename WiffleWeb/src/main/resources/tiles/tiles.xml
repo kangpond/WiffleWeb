@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config.dtd">
+
+<tiles-definitions>
+
+    <!-- 有MENU的框架 -->
+	<definition name="menu" template="/layouts/tpl_menu.jsp">
+		<put-attribute name="title" value="Home" />
+		<put-attribute name="header" value="/layouts/header.jsp" />
+		<put-attribute name="menu" value="/layouts/menu.jsp" />
+		<put-attribute name="body" value="/layouts/body.jsp" />
+		<put-attribute name="footer" value="/layouts/footer.jsp" />
+	</definition>
+ 	<!-- 有MENU的框架 For 首頁  不需上方Tag -->
+	<definition name="homemenu" template="/layouts/home_menu.jsp">
+		<put-attribute name="title" value="Home" />
+		<put-attribute name="header" value="/layouts/header.jsp" />
+		<put-attribute name="menu" value="/layouts/menu.jsp" />
+		<put-attribute name="body" value="/layouts/body.jsp" />
+		<put-attribute name="footer" value="/layouts/footer.jsp" />
+	</definition>
+	<!-- 無MENU的框架 -->
+	<definition name="nomenu" template="/layouts/tpl_nomenu.jsp">
+		<put-attribute name="title" value="Home" />
+		<put-attribute name="header" value="/layouts/header.jsp" />
+		<put-attribute name="body" value="/layouts/body.jsp" />
+		<put-attribute name="footer" value="/layouts/footer.jsp" />
+	</definition>
+
+	<!-- for tag -->
+	<definition name="forTag" template="/layouts/tpl_forTag.jsp">
+		<put-attribute name="title" value="Home" />
+		<put-attribute name="body" value="/layouts/body.jsp" />
+	</definition>
+
+	<definition name="error" extends="nomenu">
+		<put-attribute name="body" value="/pages/error.jsp" />
+	</definition>
+
+	<definition name="home" extends="homemenu">
+
+		<put-attribute name="body" value="/pages/login/welcome.jsp" />
+	</definition>
+
+	<definition name="login" extends="nomenu">
+		<put-attribute name="function" value="新住民管理及分析系統 - 登入" />
+        <put-attribute name="body" value="/pages/login/loginic.jsp" />
+    </definition>
+
+	<definition name="home.city.tiles" extends="forTag">
+		<put-attribute name="body" value="/pages/login/welcomeCity.jsp" />
+	</definition>
+
+	<!-- 機關名稱代碼維護 -->
+    <definition name="deptQuery" extends="menu">
+		<put-attribute name="body" value="/pages/dept/deptQuery.jsp" />
+	</definition>
+	<definition name="deptList" extends="menu">
+		<put-attribute name="body" value="/pages/dept/deptList.jsp" />
+	</definition>
+	<definition name="deptDetailEdit" extends="menu">
+		<put-attribute name="body" value="/pages/dept/deptDetailEdit.jsp" />
+	</definition>
+
+	<!-- 多維度查詢 -->
+    <definition name="multiQuery" extends="menu">
+		<put-attribute name="function" value="多維度查詢 - 查詢頁" />
+		<put-attribute name="body" value="/pages/multiquery/multiQuery.jsp" />
+	</definition>
+	<definition name="multiList" extends="menu">
+		<put-attribute name="function" value="多維度查詢 - 列表頁" />
+		<put-attribute name="body" value="/pages/multiquery/multiList.jsp" />
+	</definition>
+	<definition name="multiChart" extends="menu">
+		<put-attribute name="function" value="多維度查詢圖" />
+		<put-attribute name="body" value="/pages/multiquery/multiChart.jsp" />
+	</definition>
+
+	<!-- 縣市分佈 查詢 -->
+	<!-- 國籍各縣市分布 -->
+    <definition name="cityOfNationQuery" extends="menu">
+		<put-attribute name="function" value="國籍各縣市分布" />
+		<put-attribute name="body" value="/pages/cityOf/nation/cityOfNationQuery.jsp" />
+	</definition>
+	<definition name="cityOfNationList" extends="menu">
+		<put-attribute name="function" value="國籍各縣市分布" />
+		<put-attribute name="body" value="/pages/cityOf/nation/cityOfNationList.jsp" />
+	</definition>
+	<!-- 臺籍配偶身份各縣市分布 -->
+    <definition name="cityOfTwSpPositionQuery" extends="menu">
+		<put-attribute name="function" value="臺籍配偶身份各縣市分布" />
+		<put-attribute name="body" value="/pages/cityOf/twSpPosition/cityOfTwSpPositionQuery.jsp" />
+	</definition>
+	<definition name="cityOfTwSpPositionList" extends="menu">
+		<put-attribute name="function" value="臺籍配偶身份各縣市分布" />
+		<put-attribute name="body" value="/pages/cityOf/twSpPosition/cityOfTwSpPositionList.jsp" />
+	</definition>
+	<!-- 職業各縣市分布 -->
+    <definition name="cityOfOccQuery" extends="menu">
+		<put-attribute name="function" value="職業各縣市分布" />
+		<put-attribute name="body" value="/pages/cityOf/occ/cityOfOccQuery.jsp" />
+	</definition>
+	<definition name="cityOfOccList" extends="menu">
+		<put-attribute name="function" value="職業各縣市分布" />
+		<put-attribute name="body" value="/pages/cityOf/occ/cityOfOccList.jsp" />
+	</definition>
+	<!-- 教育程度各縣市分布 -->
+    <definition name="cityOfEduQuery" extends="menu">
+		<put-attribute name="function" value="教育程度各縣市分布" />
+		<put-attribute name="body" value="/pages/cityOf/edu/cityOfEduQuery.jsp" />
+	</definition>
+	<definition name="cityOfEduList" extends="menu">
+		<put-attribute name="function" value="教育程度各縣市分布" />
+		<put-attribute name="body" value="/pages/cityOf/edu/cityOfEduList.jsp" />
+	</definition>
+	<!-- 臺配教育程度各縣市分布 -->
+    <definition name="cityOfTwSpEduQuery" extends="menu">
+		<put-attribute name="function" value="臺配教育程度各縣市分布" />
+		<put-attribute name="body" value="/pages/cityOf/twSpEdu/cityOfTwSpEduQuery.jsp" />
+	</definition>
+	<definition name="cityOfTwSpEduList" extends="menu">
+		<put-attribute name="function" value="臺配教育程度各縣市分布" />
+		<put-attribute name="body" value="/pages/cityOf/twSpEdu/cityOfTwSpEduList.jsp" />
+	</definition>
+
+	<!-- 每月分析表 -->
+	<!-- 國籍每月分析表 -->
+    <definition name="monthOfNationQuery" extends="menu">
+		<put-attribute name="function" value="國籍每月分析表" />
+		<put-attribute name="body" value="/pages/monthOf/nation/monthOfNationQuery.jsp" />
+	</definition>
+	<definition name="monthOfNationList" extends="menu">
+		<put-attribute name="function" value="國籍每月分析表" />
+		<put-attribute name="body" value="/pages/monthOf/nation/monthOfNationList.jsp" />
+	</definition>
+	<!-- 臺籍配偶身份每月分析表 -->
+    <definition name="monthOfTwSpPositionQuery" extends="menu">
+		<put-attribute name="function" value="臺籍配偶身份每月分析表" />
+		<put-attribute name="body" value="/pages/monthOf/twSpPosition/monthOfTwSpPositionQuery.jsp" />
+	</definition>
+	<definition name="monthOfTwSpPositionList" extends="menu">
+		<put-attribute name="function" value="臺籍配偶身份每月分析表" />
+		<put-attribute name="body" value="/pages/monthOf/twSpPosition/monthOfTwSpPositionList.jsp" />
+	</definition>
+	<!-- 職業每月分析表 -->
+    <definition name="monthOfOccQuery" extends="menu">
+		<put-attribute name="function" value="職業每月分析表" />
+		<put-attribute name="body" value="/pages/monthOf/occ/monthOfOccQuery.jsp" />
+	</definition>
+	<definition name="monthOfOccList" extends="menu">
+		<put-attribute name="function" value="職業每月分析表" />
+		<put-attribute name="body" value="/pages/monthOf/occ/monthOfOccList.jsp" />
+	</definition>
+	<!-- 教育程度每月分析表 -->
+    <definition name="monthOfEduQuery" extends="menu">
+		<put-attribute name="function" value="教育程度每月分析表" />
+		<put-attribute name="body" value="/pages/monthOf/edu/monthOfEduQuery.jsp" />
+	</definition>
+	<definition name="monthOfEduList" extends="menu">
+		<put-attribute name="function" value="教育程度每月分析表" />
+		<put-attribute name="body" value="/pages/monthOf/edu/monthOfEduList.jsp" />
+	</definition>
+	<!-- 台配教育程度每月分析表 -->
+    <definition name="monthOfTwSpEduQuery" extends="menu">
+		<put-attribute name="function" value="臺配教育程度每月分析表" />
+		<put-attribute name="body" value="/pages/monthOf/twSpEdu/monthOfTwSpEduQuery.jsp" />
+	</definition>
+	<definition name="monthOfTwSpEduList" extends="menu">
+		<put-attribute name="function" value="臺配教育程度每月分析表" />
+		<put-attribute name="body" value="/pages/monthOf/twSpEdu/monthOfTwSpEduList.jsp" />
+	</definition>
+
+	<!-- 外配國籍分布-依子女出國未歸年 -->
+    <definition name="nationOfAbroadQuery" extends="menu">
+		<put-attribute name="function" value="外配國籍分布(依縣市)-依子女出國未歸年統計表" />
+		<put-attribute name="body" value="/pages/nationOf/abroad/nationOfAbroadQuery.jsp" />
+	</definition>
+	<definition name="nationOfAbroadList" extends="menu">
+		<put-attribute name="function" value="外配國籍分布(依縣市)-依子女出國未歸年統計表" />
+		<put-attribute name="body" value="/pages/nationOf/abroad/nationOfAbroadList.jsp" />
+	</definition>
+
+    <!-- 功能表維護 -->
+    <definition name="function.functionList.tiles" extends="menu">
+        <put-attribute name="parent" value="NRSManagementRoot" cascade="true" />
+        <put-attribute name="body" value="/pages/sys/functions/functionList.jsp" />
+    </definition>
+    <definition name="function.create.tiles" extends="menu">
+        <put-attribute name="parent" value="NRSManagementRoot" cascade="true" />
+        <put-attribute name="body" value="/pages/sys/functions/create.jsp" />
+    </definition>
+
+
+    <!-- 使用者帳號權限作業 -->
+    <definition name="user.list" extends="menu">
+        <put-attribute name="parent" value="NRSManagementRoot" cascade="true" />
+        <put-attribute name="body" value="/pages/sys/userDef/userDefList.jsp" />
+    </definition>
+    <definition name="user.info" extends="menu">
+        <put-attribute name="parent" value="NRSManagementRoot" cascade="true" />
+        <put-attribute name="body" value="/pages/sys/userDef/userInfo.jsp" />
+    </definition>
+    <definition name="user.edit" extends="menu">
+        <put-attribute name="parent" value="NRSManagementRoot" cascade="true" />
+        <put-attribute name="body" value="/pages/sys/userDef/userEdit.jsp" />
+    </definition>
+    <definition name="user.delete" extends="menu">
+        <put-attribute name="parent" value="NRSManagementRoot" cascade="true" />
+        <put-attribute name="body" value="/pages/sys/userDef/userDel.jsp" />
+    </definition>
+    <definition name="user.selfie" extends="menu">
+        <put-attribute name="parent" value="NRSManagementRoot" cascade="true" />
+        <put-attribute name="body" value="/pages/sys/userDef/userSelfie.jsp" />
+    </definition>
+
+    <!-- 使用者帳號申請核准作業 -->
+    <definition name="userApply.list" extends="menu">
+        <put-attribute name="parent" value="NRSManagementRoot" cascade="true" />
+        <put-attribute name="body" value="/pages/sys/userApply/userApplyList.jsp" />
+    </definition>
+    <definition name="userApply.info" extends="menu">
+        <put-attribute name="parent" value="NRSManagementRoot" cascade="true" />
+        <put-attribute name="body" value="/pages/sys/userApply/exam.jsp" />
+    </definition>
+    <definition name="userApply.alter" extends="menu">
+        <put-attribute name="parent" value="NRSManagementRoot" cascade="true" />
+        <put-attribute name="body" value="/pages/sys/userApply/alter.jsp" />
+    </definition>
+	<definition name="userApply.apply" extends="nomenu">
+        <put-attribute name="function" value="使用者帳號權限申請" />
+        <put-attribute name="body" value="/pages/sys/userApply/userApply.jsp" />
+    </definition>
+	<definition name="userApply.announ" extends="nomenu">
+		<put-attribute name="function" value="使用者帳號權限申請" />
+        <put-attribute name="body" value="/pages/sys/userApply/comment.jsp" />
+    </definition>
+
+	<!-- 稽核紀錄查詢 -->
+    <definition name="audit.query" extends="menu">
+    	<put-attribute name="parent" value="NRSManagementRoot" cascade="true" />
+        <put-attribute name="body" value="/pages/sys/audit/searchAuditQuery.jsp" />
+    </definition>
+    <definition name="audit.summary" extends="menu">
+    	<put-attribute name="parent" value="NRSManagementRoot" cascade="true" />
+        <put-attribute name="body" value="/pages/sys/audit/searchSummary.jsp" />
+    </definition>
+
+    <!-- 稽核紀錄表下載 -->
+    <definition name="reportMgmt.query.tiles" extends="menu">
+        <!-- <put-attribute name="parent" value="PSAManagementRoot" cascade="true" /> -->
+        <put-attribute name="body" value="/pages/sys/reportMgmt/searchReportMgmt.jsp" />
+    </definition>
+    <definition name="reportMgmt.list.tiles" extends="menu">
+        <!-- <put-attribute name="parent" value="PSAManagementRoot" cascade="true" /> -->
+        <put-attribute name="body" value="/pages/sys/reportMgmt/getReportMgmtList.jsp" />
+    </definition>
+    <definition name="reportMgmt.info.tiles" extends="menu">
+        <!-- <put-attribute name="parent" value="PSAManagementRoot" cascade="true" /> -->
+        <put-attribute name="body" value="/pages/sys/reportMgmt/queryInfo.jsp" />
+    </definition>
+
+	<!-- 動態查詢 -->
+	<definition name="dataQuery.inquiry" extends="menu">
+		<put-attribute name="parent" value="QueryRoot" cascade="true" />
+		<put-attribute name="body" value="/pages/dataquery/dataQuery.jsp" />
+	</definition>
+	<definition name="dataQuery.list" extends="menu">
+		<put-attribute name="parent" value="QueryRoot" cascade="true" />
+		<put-attribute name="body" value="/pages/dataquery/dataQueryList.jsp" />
+	</definition>
+	<definition name="dataQuery.detail" extends="menu">
+		<put-attribute name="parent" value="QueryRoot" cascade="true" />
+		<put-attribute name="body" value="/pages/dataquery/dataQueryDetail.jsp" />
+	</definition>
+	<definition name="dataQuery.applyCaseList" extends="forTag">
+		<put-attribute name="body" value="/pages/dataquery/applyCaseList.jsp" />
+	</definition>
+	<definition name="dataQuery.immiList" extends="forTag">
+		<put-attribute name="body" value="/pages/dataquery/immiList.jsp" />
+	</definition>
+	<definition name="dataQuery.interviewList" extends="forTag">
+		<put-attribute name="body" value="/pages/dataquery/interviewList.jsp" />
+	</definition>
+	<definition name="dataQuery.interviewDetail" extends="nomenu">
+		<put-attribute name="function" value="面談紀錄明細" />
+		<put-attribute name="body" value="/pages/dataquery/interviewDetail.jsp" />
+	</definition>
+
+	<!-- 動態查詢 -外僑口卡 -->
+	<definition name="query.foriegn" extends="forTag">
+		<put-attribute name="body" value="/pages/dataquery/foriegnInfo.jsp" />
+	</definition>
+	<!-- 動態查詢 -行方不明記錄 -->
+	<definition name="query.missing" extends="forTag">
+		<put-attribute name="body" value="/pages/dataquery/missingReport.jsp" />
+	</definition>
+	<!-- 動態查詢 -婚姻狀況 -->
+	<definition name="query.marriage" extends="forTag">
+		<put-attribute name="body" value="/pages/dataquery/spouseList.jsp" />
+	</definition>
+	<definition name="query.marriage.info" extends="forTag">
+		<put-attribute name="body" value="/pages/dataquery/marriageInfo.jsp" />
+	</definition>
+	<!-- 動態查詢 -勞健保 -->
+	<definition name="query.labor" extends="forTag">
+		<put-attribute name="body" value="/pages/dataquery/laborIsurance.jsp" />
+	</definition>
+	<definition name="query.health" extends="forTag">
+		<put-attribute name="body" value="/pages/dataquery/healthIsurance.jsp" />
+	</definition>
+	<!-- 動態查詢 -配偶健康-->
+	<definition name="query.care" extends="forTag">
+		<put-attribute name="body" value="/pages/dataquery/healthCare.jsp" />
+	</definition>
+	<!-- 動態查詢 -子女健康-->
+	<definition name="query.child.care" extends="forTag">
+		<put-attribute name="body" value="/pages/dataquery/childCare.jsp" />
+	</definition>
+	<!-- 動態查詢 -家庭經濟狀況-->
+	<definition name="query.income" extends="forTag">
+		<put-attribute name="body" value="/pages/dataquery/allowanceInfo.jsp" />
+	</definition>
+	<!-- 動態查詢 -海基會認證資料-->
+	<definition name="query.sef" extends="forTag">
+		<put-attribute name="body" value="/pages/dataquery/sefCertifyList.jsp" />
+	</definition>
+	<definition name="query.sef.info" extends="forTag">
+		<put-attribute name="body" value="/pages/dataquery/sefCertifyInfo.jsp" />
+	</definition>
+	<!-- 動態查詢 -汽機車駕照 -->
+	<definition name="query.licence" extends="forTag">
+		<put-attribute name="body" value="/pages/dataquery/driverLicence.jsp" />
+	</definition>
+
+	<!-- 報表查詢 -報表測試 -->
+	<definition name="reportMainQuery" extends="menu">
+		<put-attribute name="function" value="報表查詢 頁" />
+		<put-attribute name="body" value="/pages/report/reportMain/reportMainQuery.jsp" />
+	</definition>
+	<definition name="reportMainView" extends="menu">
+		<put-attribute name="function" value="報表查詢 頁" />
+		<put-attribute name="body" value="/pages/report/reportMain/reportMainView.jsp" />
+	</definition>
+
+	<!-- 公告欄 -->
+	<definition name="publicNews.list.tiles" extends="menu">
+		<put-attribute name="body"
+			value="/pages/publicNews/publicNewsList.jsp" />
+	</definition>
+
+	<definition name="publicNews.see.tiles" extends="menu">
+		<put-attribute name="body"
+			value="/pages/publicNews/publicNewsSee.jsp" />
+	</definition>
+	<definition name="publicNews.create.tiles" extends="menu">
+		<put-attribute name="body"
+			value="/pages/publicNews/publicNewsCreate.jsp" />
+	</definition>
+
+
+	<!-- 大陸配偶各省份 -->
+	<definition name="cnSpouse.birthPlace.search" extends="menu">
+		<put-attribute name="body" value="/pages/analysis/cnSpouse/birthPlaceSearch.jsp" />
+	</definition>
+	<definition name="cnSpouse.birthPlace.result" extends="menu">
+		<put-attribute name="body" value="/pages/analysis/cnSpouse/birthPlaceChart.jsp" />
+	</definition>
+	<!-- 年齡差距狀況 -->
+	<definition name="spouseAge.query" extends="menu">
+		<put-attribute name="body" value="/pages/analysis/spouseAge/ageQuery.jsp" />
+	</definition>
+	<definition name="spouseAge.result" extends="menu">
+		<put-attribute name="body" value="/pages/analysis/spouseAge/ageChart.jsp" />
+	</definition>
+
+	<!-- 外配年齡狀況分布 -->
+	<definition name="spouseAgeAccu.query" extends="menu">
+		<put-attribute name="body" value="/pages/analysis/spouseAgeAccu/ageAccuQuery.jsp" />
+	</definition>
+	<definition name="spouseAgeAccu.result" extends="menu">
+		<put-attribute name="body" value="/pages/analysis/spouseAgeAccu/ageAccuChart.jsp" />
+	</definition>
+
+	<!-- 台配年齡狀況分布 -->
+	<definition name="twSpouseAge.query" extends="menu">
+		<put-attribute name="body" value="/pages/analysis/twSpouseAge/twAgeAccuQuery.jsp" />
+	</definition>
+	<definition name="twSpouseAge.result" extends="menu">
+		<put-attribute name="body" value="/pages/analysis/twSpouseAge/twAgeAccuChart.jsp" />
+	</definition>
+
+	<!-- 台配縣市鄉鎮分布 -->
+	<definition name="twSpouseCity.query" extends="menu">
+		<put-attribute name="body" value="/pages/analysis/twSpouseCity/twCityAccuQuery.jsp" />
+	</definition>
+	<definition name="twSpouseCity.result" extends="menu">
+		<put-attribute name="body" value="/pages/analysis/twSpouseCity/twCityAccuChart.jsp" />
+	</definition>
+</tiles-definitions>

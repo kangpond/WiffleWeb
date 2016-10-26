@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/* CSS Document */
+/*
+form table { border:none; border-collapse:collapse; margin:0 auto; line-height:110%; }
+form caption { text-align:left; font-size:1.08em; padding:.7em 0; color:#000; }
+form th { vertical-align:top; text-align:right; padding:4px 8px 0 0; font-weight:normal; color:#777; max-width:15em; }
+form td { vertical-align:top; padding:0 0 5px 5px; }
+form td p { line-height:120%; margin:.3em 0 .5em; width:360px; }
+form td label { display:inline-block; margin:4px 1.2em 7px 0; }
+input, select { font-size:1em; margin:0 4px 4px 0; vertical-align:top; }
+input[type="radio"], input[type="chechbox"] { vertical-align:top; margin-right:5px; }
+input[type="text"], input.text, input[type="password"] , textarea { border:1px solid #bbb; font-size:1em; height:1.2em; padding:3px; margin-bottom:3px; background:#f8f8f8;width:360px; }
+textarea { line-height:140%;height:7em;overflow:auto; }
+input[type="text"]:focus, input[type="password"]:focus , textarea:focus {background:#fff; border-color:#888; outline:none}
+input.long { width:360px; }
+input.short { width:120px; }
+input.mini { width:80px; }
+input.button, input[type="submit"], input[type="button"], input[type="reset"] { margin:0 3px 0 0; cursor:pointer;}
+input[type="radio"], input[type="checkbox"] { vertical-align:-6%; }
+*/
+.buttonDiv { border-top:1px solid #bbb; margin:12px 0; padding:15px 0 0; text-align:center; }
+.buttonDiv input.button, .buttonDiv input[type="submit"], .buttonDiv input[type="button"], .buttonDiv input[type="reset"] {font-size:15px; line-height:17px; border:none; background:#555 url(../images/btn_bg.png) repeat-x 0 center; color:#fff; padding:3px 12px;  height:2em;border-radius:3px; box-shadow:rgba(0,0,0,0.5) 0 1px 4px; margin:0 2px 1px;}
+.buttonDiv input.button:hover, .buttonDiv input[type="submit"]:hover , .buttonDiv input[type="button"]:hover , .buttonDiv input[type="reset"]:hover {box-shadow:none;margin:1px 2px 0;}
+.must { margin-right:3px; color:#c30;font-size:.8em; }
+/* 轉寄友人 form */
+.form caption { text-align:left; padding:0 0 10px; font-size:1.25em; overflow:hidden; }
+/*qp*/
+.qp th { min-width:6em; max-width:9em; white-space:nowrap; }
+.qp td input[value="清除"] { width:24px; height:24px; color:transparent; background:transparent url(../images/btn_reset.png) no-repeat; border:none;
+font-size:0 \9; color:#fff \9; }
+/*驗證碼*/
+input.captchaTxt { width:120px; margin:0 0 18px 5px;}
+form td a img[alt] {display:inline-block; margin:-10px 2px 0;}
+/*會員資料修改*/
+fieldset { border:1px dashed #bbb; border-radius:6px; margin:0 15px 12px; padding:9px 0 0;}
+fieldset th { width:10em;}
+fieldset legend { font-size:1em; margin:0 0 0 12px; color:#000;}
+/*sp 訂閱電子報*/
+.confirmThis { font-size:1.15em;}
+.confirmThis td em { margin:3px 0 5px -8px; display:block; color:#000;}

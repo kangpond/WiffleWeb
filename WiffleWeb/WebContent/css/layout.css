@@ -1,0 +1,218 @@
+@charset "utf-8";
+/*------------------------------*/
+.form {
+
+}
+
+.mid {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.left {
+	text-align: left;
+}
+
+.d_header {
+	width: 1000px;
+	text-align: center;
+}
+
+.d_title {
+	width: auto;
+	min-width: 800px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	color: #000000;
+	background-color: #F1A3F1;
+}
+
+.d_th {
+	width: auto;
+	height: 30px;
+	line-height: 30px;
+	font-size: 22px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #5182BB;
+	padding: 5px;
+	border: 2px;
+	border-style: outset;
+	border-color: #808080;
+}
+
+.checkboxLabel {
+	font: 16px "微軟正黑體", Arial, Helvetica, sans-serif;
+	line-height: 1.42857143;
+	color: #333;
+}
+
+.radioBtn {
+	font: 16px "微軟正黑體", Arial, Helvetica, sans-serif;
+	line-height: 1.42857143;
+	color: #333;
+}
+
+.tableDiv {
+	width: auto;
+	height: auto;
+	max-height: 500px;
+	overflow: auto;
+}
+
+.lb_title {
+	text-align: left;
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+	/* background-color: #82E5FD; */
+	height: 36px;
+}
+
+.plus, minus {
+	width: auto;
+	display: inline-block;
+	vertical-align: middle;
+	float: left;
+}
+
+.d_content {
+	height: 430px;
+}
+
+.d_desc {
+	width: auto;
+	max-width: 300px;
+	height: auto;
+	max-height: 60px;
+	overflow: auto;
+}
+
+.innerBtn {
+	background-color: #7A993C;
+	color: #FFF;
+	box-shadow: 0 0 5px #00343d;
+	padding: .1em .2em .1em .4em;
+	margin: .5em;
+	font: 1.2em "微軟正黑體", Arial, Helvetica, sans-serif;
+	vertical-align: middle;
+	border: none;
+	border-radius: 4px;
+	letter-spacing: .3em;
+}
+
+.d_btn {
+	text-align: center;
+}
+
+.tbox_small {
+	width: 60px;
+}
+
+.sysDiv {
+
+}
+
+.sysTable {
+	margin: 3px;
+	border: 3px;
+	border-style: outset;
+	border-color: #AAAAAA;
+	width: 300px;
+	height: 200px;
+}
+
+.sysTitle {
+	background-color: #BBFF00;
+	text-align: center;
+}
+
+.sysBody {
+	text-align: center;
+}
+
+.table_pager {
+	padding: 2px;
+	text-align: center;
+}
+
+.d_cnt {
+	font-size: 18pt;
+}
+
+.imgTable {
+	margin: 0 auto;
+	width: auto;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.imgBig {
+	padding: 5px;
+	width: 50px;
+	height: 50px;
+}
+
+.imgNormal {
+	width: 25px;
+	height: 25px;
+}
+
+.imgSmall {
+	width: 15px;
+	height: 15px;
+}
+
+.btnHL {
+	border-radius: 5px;
+	color: #5F3000;
+	background: #f39800;
+	padding: 5px 15px;
+	border: 1px solid #C60;
+	line-height: 110%;
+	white-space: nowrap;
+	font-size: 1em;
+	font-weight: bold;
+}
+.edit {
+	border-radius: 5px;
+	color: #5F3000;
+	background: #f39800;
+	padding: 5px 15px;
+	border: 1px solid #C60;
+	line-height: 110%;
+	white-space: nowrap;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+/* 星號 style*/
+.asterisk {
+	color: red;
+	font-size: font-size:1.1em;
+	font-weight: bold;
+}
+
+.loginNotice {
+	font-weight: bold;
+	color: red;
+	border-radius: 8px;
+	background: #F4F6BA;
+	padding: 10px 0px 10px 0px;
+	margin: 0px 0px 0px 0px;
+	width: 100%;
+	text-align: center;
+}
+
+.sBoxBtnSpan {
+	height : 300px;
+}
+
+
+
+
+
+

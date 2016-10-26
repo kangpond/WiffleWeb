@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html { background:#fff; }
+body { background:#fff; color:#000;}
+h1 { display:block; font-size:24px; color:#000; content:"內政部移民署"}
+/*.layout .leftbg { display:none;}*/
+.share , .navigation { display:none;}

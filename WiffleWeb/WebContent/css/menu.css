@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+.leftbg .menu { margin-top:20px; margin-left:25px;}
+.leftbg .menu ul { list-style: none; margin:0; padding:0; color: #FFF;}
+.leftbg .menu ul>li { margin:5px 0; padding:0;}
+.leftbg .menu ul>li>a { display: block; background: #29b2ae; color:#FFF; padding: 8px 15px; line-height: 150%; }
+.leftbg .menu ul>li>a:hover, .leftbg .menu ul>li>a.here { background: #0090cc; text-decoration: none; }
+.leftbg .menu ul ul { background:#a1a1a1; margin:5px 0 0; padding:5px 10px 10px 10px;list-style: none;}
+.leftbg .menu ul ul li { border-bottom:1px dotted #fff;}
+.leftbg .menu ul ul li a { color:#FFF; display: block; margin:3px 0; background: url(../images/icon_a.png) no-repeat 5px 12px; padding:5px 10px 5px 22px; border-radius:3px;}
+.leftbg .menu ul ul li a:hover, .leftbg .menu ul ul li a.here {background:#d0d0d0 url(../images/icon_hover.png) no-repeat 5px 12px; color:#000; text-decoration: none; }
+.leftbg .menu .jstree-clicked {background:#d0d0d0 url(../images/icon_hover.png) no-repeat 5px 12px; color:#000; text-decoration: none; }

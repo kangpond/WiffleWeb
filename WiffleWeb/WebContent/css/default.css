@@ -1,0 +1,254 @@
+@charset "UTF-8";
+/* CSS Document */
+.error {color: #ff0000;}
+body { width:100%; padding:0; margin:0 auto; color:#444; letter-spacing:1px; font: 14px "微軟正黑體", Arial, Helvetica, sans-serif; }
+body.login {background:#dad6cc;}
+header, footer, nav, aside, section, article, figure, figcaption { display:block; }
+h1, h2, h3, h4, h5, h6 { margin:0; padding:0; color:#000;}
+p { margin:0 0 1.5em; line-height:160%; }
+img { border:none; }
+li { line-height:140%; margin:0 0 .5em; }
+a { color:#0062a0; text-decoration:none; }
+a:hover { color: #CC0000; text-decoration: none; }
+em { font-style:normal;}
+form { margin:0; padding:0; }
+.w100 { width:100%;}
+.w90 { width:90%;}
+.w80 { width:80%;}
+.w70 { width:70%;}
+.w60 { width:60%;}
+.w50 { width:50%;}
+.w40 { width:40%;}
+.w30 { width:30%;}
+.w20 { width:20%;}
+/*--color-------------------------*/
+.orange { color:#F60}
+.blue { color:#06C;}
+.red { color:#F00;}
+/*--------------------表格欄位預設位置 左中右aRight,aLeft,aCenter----------------*/
+.aRight{ text-align:right !important;}
+.aLeft{ text-align:left !important;}
+.aCenter{ text-align:center !important;}
+/*--img.ui-datepicker-trigger---*/
+img.ui-datepicker-trigger { vertical-align: middle; margin: 0 0 0 7px; background-color: #0092aa; padding:3px; border-radius:3px; }
+/*---*/
+.date {white-space:nowrap;letter-spacing:0;font-family:Arial, Helvetica, sans-serif; }
+li .date { display:inline-block;margin-left:.8em;font-size:.92em;}
+.from { margin-left:.8em; font-size:.92em;color:#777;}
+.more { font-size:.875em; margin:0; line-height:110%;}
+.more a {padding:3px 8px; text-decoration:none; color:#FFF; background-color:#5a5856; border-radius:4px; }
+.more a:hover { background-color: #0092aa;}
+span.btnCalendar  { display:inline-block; padding:5px 7px; margin:0 20px 3px 8px; vertical-align:middle; background-color: #0092aa; border:none; border-radius:4px; box-shadow: 0 0 3px #676767; }
+span.btnCalendar:hover { background-color: #900;}
+/*header*/
+div.wrap div.top { background:url(../images/header_bg.png) repeat-x left top;}
+div.wrap header.header { min-height:83px; background: url(../images/header.png) no-repeat left top; }
+div.wrap header.header h1 { padding:.5em 0 0 1em ;}
+body.login .header { position: relative; height: 29em; background: url(../images/login_bg.png) no-repeat center top; background-size: contain;/*依照原來的比例，等比的縮放到指定的元素的尺寸中。*/  }
+body.login .header h1 { position: absolute; margin: 0; padding: 0; left: 50%; top: 10.7em; margin-left: -350px; }
+
+/*header功能區*/
+ul.Ribbon { position:absolute; top:1em; right:1.5em; margin: 0; padding: 0; list-style: none; }
+ul.Ribbon li { display:inline-block; padding:0 10px; background:url(../images/RibbonLi.png) no-repeat 0 center;}
+ul.Ribbon li a { color:#989590;}
+ul.Ribbon li a:hover, .userProfile a:hover { color:#900; text-decoration: none; }
+ul.Ribbon li:first-child { background:none;}
+ul.Ribbon li:first-child a { color:#007d9e;}
+.loginTime {position:absolute; top:1.1em; right:12em;}
+.userProfile {position:absolute; top:3em; right:.8em;}
+.userProfile, .userProfile a { color:#c74c02;}
+.userProfile span, .userProfile em { margin:0 .5em;}
+/*form-control*/
+input[type="email"], input[type="text"], input[type="password"] { font: 15px "微軟正黑體", Arial, Helvetica, sans-serif; vertical-align: middle; line-height: 1.42857143; color: #555; padding: 0.3em .5em; background-color: #fff; background-image: none; border: 1px solid #ccc; border-radius: 4px; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075); box-shadow: inset 0 1px 1px rgba(0,0,0,.075); -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s; -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
+.LoginCenter button[type="submit"] { width: 15em; color: #333; padding: .4em 1em .4em 2em; margin: 0 .5em; font: 1.438em "微軟正黑體", Arial, Helvetica, sans-serif; vertical-align: middle; background-color: #f0ede5; border: none; border-radius: 4px; box-shadow: 0px 0px 5px #5b5b5b; letter-spacing: 1em; }
+button[type="submit"], section.butCenter input[type="button"], button[type="reset"], button.btn2 { padding: .2em .8em .2em 1.4em; margin: 0 .5em; font: 1.438em "微軟正黑體", Arial, Helvetica, sans-serif; vertical-align: middle; border: none; border-radius: 4px; letter-spacing: .3em;}
+button[type="submit"], section.butCenter input[type="button"] { background-color: #02adc1; color:#FFF; box-shadow: 0 0 5px #02adc1; }
+button[type="reset"] { background-color: #333333; color: #FFF; box-shadow: 0 0 5px #000; }
+button.btn2 { background-color: #0092aa !important; color:#FFF; box-shadow: 0 0 5px #00343d;}
+button.btnCode {padding: .3em .7em; margin:.3em .5em; color:#FFF; font: 1.063em "微軟正黑體", Arial, Helvetica, sans-serif; border: none; background-color: #0092aa; border-radius: 3px; box-shadow: 0px 0px 5px #5b5b5b; letter-spacing: .1em;}
+section.styleTb table button[type="submit"], section.styleTb table button[type="reset"], section.styleTb2 table button[type="submit"], section.styleTb2 table button[type="reset"] {padding: .2em .5em; margin: .2em; font: 1.063em "微軟正黑體", Arial, Helvetica, sans-serif; letter-spacing: .2em;}
+select { padding: 0.4em .5em; font-size: 15px; line-height: 1.42857143; color: #555555; background-color: #ffffff; background-image: none; border: 1px solid #cccccc; border-radius: 4px; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075); box-shadow: inset 0 1px 1px rgba(0,0,0,0.075); -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s; -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s }
+select:focus, input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focus { border-color: #66afe9; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6); box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6) }
+
+button.dialog {padding: .3em .7em; margin:.3em .5em; color:#FFF; font: 1.063em "微軟正黑體", Arial, Helvetica, sans-serif; border: none; background-color: #0092aa; border-radius: 3px; box-shadow: 0px 0px 5px #5b5b5b; letter-spacing: .1em;}
+
+/*--首頁頁韱修正jquery-ui.css--*/
+.mp .ui-widget, .sp .ui-widget {font-family: "微軟正黑體",Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;}/*--第189行--*/
+.sp .ui-widget button {font-family:"微軟正黑體", Arial, Helvetica, sans-serif;font-size: 1.438em;}
+/*----*/
+.form-control { padding: 0.4em .5em; font-size: 15px; line-height: 1.42857143; color: #555555; background-color: #ffffff; background-image: none; border: 1px solid #cccccc; border-radius: 4px; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075); box-shadow: inset 0 1px 1px rgba(0,0,0,0.075); -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s; -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s }
+.form-control:focus { border-color: #66afe9; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6); box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6) }
+.form-control::-moz-placeholder {
+color:#999999;
+opacity:1
+}
+.form-control:-ms-input-placeholder {
+color:#999999
+}
+.form-control::-webkit-input-placeholder {
+color:#999999
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control { background-color: #eeeeee; opacity: 1 }
+.form-control[disabled], fieldset[disabled] .form-control { cursor: not-allowed }
+textarea.form-control { height: auto }
+input[type="search"] { -webkit-appearance: none }
+/*--Login頁--*/
+a.forgotPassword { display: inline-block; vertical-align:middle; width: 10em; color: #333; padding: .4em 2em .4em 2em; margin: 0 .5em; font: 1.438em "微軟正黑體", Arial, Helvetica, sans-serif; background-color: #f0ede5; border: none; border-radius: 4px; box-shadow: 0px 0px 5px #5b5b5b; letter-spacing: .5em; }
+a.forgotPassword:hover { text-decoration: none; color: #007e9d; }
+/*inputArea*/
+.LoginCenter section.inputArea { background: #66ccd8 url(../images/inputArea_bg.png) repeat-x top left; min-height: 2.5em; padding: 1.3em 2em; text-align: center; }
+.LoginCenter section.inputArea label { padding: 0 10px 0 0; font-size: 1.25em; color: #FFF; vertical-align: middle; }
+.LoginCenter section.inputArea input[type="email"], .LoginCenter section.inputArea input[type="text"], .LoginCenter section.inputArea input[type="password"] { width: 25em; border: 1px solid #c4e0e7; color: #004b5e; vertical-align: middle; }
+.LoginCenter section.inputArea input[type="text"] { width: 13em; }
+.LoginCenter section.inputArea .account { width: 25em !important;}
+.LoginCenter section.butCenter { border-top:none; text-align: center; margin: 1.5em 2em 1em; padding:0; }
+.LoginCenter section.inputArea ul { list-style: none; margin: 0; padding: 0; }
+.LoginCenter section.inputArea ul li { margin: 0; padding: 8px 0; vertical-align: middle; }
+.LoginCenter section.inputArea ul li img { vertical-align: middle; margin: 0 9px; }
+
+/*layout*/
+.layout { margin:0; padding:0; border-collapse:collapse; width:100%;}
+.layout .leftbg { vertical-align: top; width: 250px; padding: 0; background-color: #333; border-right:1px solid #333;}
+.layout .center { vertical-align: top; padding: 30px; }
+.hidden { display:none }/*for gip, to control column display*/
+
+/*footer : site wide footer */
+.wrap footer.footer {background:#dad6cc;}
+footer.footer {color:#007e9d;}
+footer.footer section {padding:22px 25px 8px; text-align:center;}
+footer.footer section a { color:#fff; text-decoration:none;}
+footer.footer section p { margin:0 0 .8em; padding:0; line-height:180%;}
+
+/*== for all pages except mp ==*/
+.friendly { clear:both; margin:5px 30px 8px 0;overflow:hidden;}
+/*path：瀏覽路徑*/
+.path { color:#555; margin:5px 0 0 0; float:left; width:600px; line-height:140%; }
+.path .before { padding-right:14px; margin-right:8px; background:url(../images/path.png) no-repeat right 1px; }
+.path a { text-decoration:none; color:#196da8; }
+.path a:hover { color:#0096ff; text-decoration:none; }
+
+
+/*--系統監控看--*/
+.Monitor .green { background-color:#090;}
+.Monitor .red { background-color:#F00;}
+.Monitor .yellow { background-color: #FC0;}
+.Monitor span.green { background-color:#090; display:inline-block; width:13px; height:13px; border-radius:50%; margin:0 5px;}
+.Monitor span.red { background-color:#F00; display:inline-block; width:13px; height:13px; border-radius:50%; margin:0 5px;}
+.Monitor span.yellow { background-color: #FC0; display:inline-block; width:13px; height:13px; border-radius:50%; margin:0 5px;}
+div.dataArea { width: 80px; height: 80px; margin: 25px auto; border-radius: 50%; border: 1px solid #CCC; background-color: #EEEEEE; }
+
+.Monitor h2 span, .Search h2 span, .sp h2 span { padding-right:40px;background:url(../images/h2_span.png) no-repeat right 8px;}
+.Monitor h2, .Search h2, .sp h2 {
+	margin: 0 0 15px;
+	padding: 5px 15px 5px 0;
+	background: none;
+	border-style: none;
+	border-bottom:4px solid #5a5856;
+}
+.thumbnail { clear:both;margin:0 0 20px;}
+/*-----------------------以 ul li 排*/
+.thumbnail>ul { list-style: none;margin:0 0 0 5px;padding:10px 0;overflow:hidden;width:100%;line-height:100%;}
+.thumbnail>ul>li { float:left;text-align:center; padding:0; margin:0;}
+.thumbnail>ul>li>a {border:1px solid #bbb; display:block; padding:5px;margin:0 10px 20px; width:235px;height:230px;border-radius:8px;box-shadow:rgba(0, 0, 0, .3) 0 1px 4px;}
+.thumbnail>ul>li>a:hover {border:1px solid #666;}
+.thumbnail li .image { display:block;margin:0 10px 5px;width:190px;height:130px;overflow:hidden;border:1px solid #aaa;}
+.thumbnail li .image img { margin:0;padding:0;}
+.thumbnail li h3 { margin: 0 0 7px; padding: 5px; color:#0062a0; text-align: center; line-height: 150%; background-color: #F6F6F6; height: 48px; border-radius: 7px; overflow: hidden; }
+.thumbnail li a { text-decoration:none;}
+.thumbnail li marquee { margin: 10px; padding: 6px 0 0; border-top: 1px dotted #CCC;}
+.thumbnail ul ul { list-style:none; margin:0; padding:0; text-align:left; vertical-align:middle;font-size:.92em;line-height:110%;color:#888;}
+.thumbnail ul ul li { margin:0 5px;padding:0; display:inline-block;}
+.thumbnail ul ul li span { vertical-align:middle;}
+.thumbnail ul ul li em { color:#333;}
+.thumbnail ul ul li.date { margin-left:0;}
+.thumbnail ul ul li.date em, .thumbnail ul ul li.count em { font-family:Arial, Helvetica, sans-serif;letter-spacing:0;}
+/*-----------------------displayArea--------*/
+.displayArea {}
+.displayArea>ul { list-style: none;margin:0 0 0 5px;padding:10px 0;}
+.displayArea>ul>li { float:left;padding:0;margin:0 10px 20px;text-align: left;}
+.displayArea>ul>li img { vertical-align:middle; margin:0 8px;}
+.displayArea>ul>li em { color: #0092AA; vertical-align: middle; font: 19px Arial, Helvetica, sans-serif; }
+.displayArea>ul>li a { display:inline-block; vertical-align:middle; padding:7px 15px; border:1px solid #bbb;width:80px;height:20px;border-radius:5px;box-shadow:rgba(0, 0, 0, .3) 0 1px 4px;}
+.displayArea>ul>li a:hover { border: 1px solid #CCC; background-color: #eee7df; text-decoration: none; }
+.displayArea>ul>li.dataLights { min-width: 301px; padding: 2px 5px;}
+.displayArea>ul>li.allLights a { width:200px;}
+.displayArea>ul>li.dataLights span.digital { display: inline-block; text-align: center; vertical-align: middle; background-color: #0092ab; min-width: 28px; min-height: 23px; border-radius: 50%; color: #FFF; margin: -3px 5px 0 5px; padding-top:2px; line-height: normal; }
+.displayArea>ul>li.dataLights em { margin-right:15px;}
+li.dataLights dl {margin:-2px 0 0;padding:0;}
+li.dataLights dt {display:inline-block;margin:0 10px 0 0;padding:0;}
+
+/*--表格樣式--*/
+table caption {font-size: 1.375em; text-align:left; margin:20px 0 8px;}
+section.styleTb, section.styleTb2 { text-align:center; padding:20px 15px; margin: 30px auto; background-color:#FFF; border:1px solid #eee; border-radius:5px; box-shadow: 0 0 10px #eee;}
+section.styleTb table, section.styleTb2 table { font-size:100%; border-collapse: collapse; width: 100%; border: 3px solid #E1E1E1;}
+section.styleTb table th { font-size: 1.125em; text-align: right; vertical-align: central; padding: 13px 10px; font-weight: normal; border: 1px solid #E1E1E1; background-color: #F6F6F6; }
+section.styleTb table td { text-align:left; vertical-align:central;padding:13px 10px; border:1px solid #E1E1E1;}
+section.styleTb table td p { margin:0; padding:0;}
+ul.Radio, ul.Checkbox { margin: 0; padding: 0; list-style: none; }
+ul.Radio li, ul.Checkbox li { display:inline-block; margin:5px 10px 5px 0; vertical-align:middle;}
+ul.Radio li input, ul.Radio li label, ul.Checkbox li input, ul.Checkbox li label {vertical-align:middle;}
+ul.Radio li em { color:#F00; font-size:1.125em;}
+/*--formTb1--*/
+section.formTb1 table { font-size:100%; border-collapse: collapse; width: 100%; background-color: #F6F6F6; margin:10px 0; }
+section.formTb1 table th { font-size: 1.125em; padding: 13px 10px; font-weight: normal; border:1px solid #FFF; text-align: right; vertical-align: central; }
+section.formTb1 table td { padding:13px 15px; border:1px solid #FFF; text-align:left; vertical-align:central;}
+section.formTb1 table td p { margin:0; padding:0;}
+/*--formTb2--*/
+section.formTb2 table { font-size:100%; border-collapse: collapse; width: 100%; margin:10px 0; border:3px solid #E9E9E9; }
+section.formTb2 table th { font-size: 1.25em; padding: 13px; font-weight: normal; font-weight: bold; border:1px solid #E9E9E9; text-align: left; vertical-align: top; }
+section.formTb2 table thead th { background-color: #9CC; color:#FFF; border: 1px solid #FFF; border-bottom:1px solid #73abab; font-weight: bold; font-size:1.313em; font-family:Arial, Helvetica, sans-serif; }
+section.formTb2 table thead tr:nth-child(2){ color:#C00; font-weight: bold; background-color:#FFFFE0; }
+section.formTb2 table td { padding: 13px; border:1px solid #E9E9E9; text-align:left; vertical-align: top; font-size:1.25em; font-family:Arial, Helvetica, sans-serif;}
+
+/*--butCenter---------------------------------------------------*/
+section.butCenter { text-align:center; border-top:1px dotted #EEE; margin:20px 0 0; padding:20px 0 0;}
+
+/*--section.styleTb2--*/
+section.styleTb2 table th, section.styleTb2 table td { padding:8px 15px;}
+section.styleTb2 table thead th {font-size:1.125em; padding:20px 15px 5px 15px;}
+ul.dataArea { margin: 0; padding: 0; list-style: none; text-align:left;}
+ul.dataArea li { font-size:1.063em; display:inline-block; margin:.3em 2em .3em 0; vertical-align:middle;}
+
+section.styleTb2 table > tbody > tr:hover{
+	background: #d2f3f8;
+}
+section.styleTb2 table > tbody > tr:nth-of-type(2n+1) {
+	background-color: rgb(242,253,253);
+}
+section.styleTb2 table > tbody > tr:nth-of-type(2n+1):hover{
+	background: #d2f3f8;
+}
+section.styleTb2 table {
+	border: 1px dotted #5a5856;
+	border-top:3px solid #5a5856;
+	border-bottom:1px solid #5a5856;
+	border-bottom:1px solid #5a5856;
+}
+section.styleTb2 table > thead > tr > th, section.styleTb2 table > tbody > tr > th, section.styleTb2 table > tfoot > tr > th, section.styleTb2 table > thead > tr > td, section.styleTb2 table > tbody > tr > td, section.styleTb2 table > tfoot > tr > td {
+	border: 1px dotted #5a5856;
+}
+section.styleTb2 table > caption + thead > tr:first-child > td, section.styleTb2 table > caption + thead > tr:first-child > th, section.styleTb2 table > colgroup + thead > tr:first-child > td, section.styleTb2 table > colgroup + thead > tr:first-child > th, section.styleTb2 table > thead:first-child > tr:first-child > td, section.styleTb2 table > thead:first-child > tr:first-child > th {
+	background-color:#e7e6e4;
+	border: 1px dotted #5a5856;
+	color: #5a5856;
+}
+/*--pop--*/
+.pop { width:850px; position:absolute; top:50%; left:50%; margin-left:-455px; margin-top:-330px; background-color:#FFF; padding:30px; border-radius:5px;box-shadow: 0 0 10px #000; z-index:9999;}
+.pop h2 { background-color: #EFEFEF;padding:8px 15px;border-radius:5px; border:none; color:#399; }
+.pop ol { margin:10px 0;}
+.pop .styleTb2 { margin-top:10px;
+ width:790; height: 400px;
+ overflow: auto;
+ scrollbar-face-color:#000000;
+ scrollbar-highlight-color:#0157ac;
+ scrollbar-shadow-color:#0157ac;
+ scrollbar-3Dlight-color:#000000;
+ scrollbar-arrow-color:#0157ac;
+}
+/*--searchArea--*/
+.searchArea { text-align:center; margin-top:10px;}
+.searchArea label { font-size:1.375em; vertical-align:middle; margin-right:10px;}
+div.Close { text-align:right; position:absolute; right:30px; top:30px;}
+div.Close a { width:30px; height:30px;}
+div.Close a img { background:url(../images/close_a.gif) no-repeat center center;}
+div.Close a:hover img { background:url(../images/close_hover.gif) no-repeat center center;}

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    version="2.0"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+    <display-name>NewResident Tags</display-name>
+    <tlib-version>2.3</tlib-version>
+    <short-name>n</short-name>
+    <uri>/newresident-tags</uri>
+    
+    <tag>
+        <name>gov</name>
+        <tag-class>gov.nia.nrs.tag.GovTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>deptId</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>processState</name>
+        <tag-class>gov.nia.nrs.tag.ProcessStateTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>state</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>crumb</name>
+        <tag-class>gov.nia.nrs.tag.BreadcrumbTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>functionId</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    
+    <tag>
+		<name>code</name>
+		<tag-class>gov.nia.nrs.tag.CodeTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>category</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>code</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>categoryType</name>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+    <tag>
+        <name>birthPlace</name>
+        <tag-class>gov.nia.nrs.tag.BirthPlaceTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>birthPlaceCode</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>birthPlace1</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>birthPlace2</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+
+	<tag>
+		<name>formatDate</name>
+		<tag-class>gov.nia.nrs.tag.FormatDateTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>date</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>displayAddress</name>
+		<tag-class>gov.nia.nrs.tag.DisplayAddressTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>niiAddress</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>gov.nia.nrs.utils.vo.NiiAddressVo</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+        <name>enums</name>
+        <tag-class>gov.nia.nrs.tag.EnumDescTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>type</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>desc</name>
+        <tag-class>gov.nia.nrs.tag.DescTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>type</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>link</name>
+        <tag-class>gov.nia.nrs.tag.QryLinkTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>firstReceiveNo</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>residentIdNo</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+</taglib>

@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url("jquery-ui.css");
+@import url("i_mp.css");/*只在首頁出現的功能區塊*/
+@import url("i_page.css");/*分頁*/
+@import url("i_menu.css");/*選單，含上方和左欄*/
+

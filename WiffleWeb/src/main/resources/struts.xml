@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+ "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+    <constant name="struts.ui.theme" value="simple" />
+    <constant name="struts.convention.result.path" value="/pages" />
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.objectFactory" value="spring" />
+    <constant name="struts.serve.static" value="false" />
+    <constant name="struts.multipart.maxSize" value="52428800" />
+
+    <constant name="struts.convention.default.parent.package" value="default" />
+
+	<!-- 
+	<constant name="struts.action.excludePattern" value="/service/.*"/>
+ 	-->
+ 	
+    <!-- File Upload Max Size -->
+	<constant name="struts.multipart.maxSize" value="5000000" />
+
+	<package name="default" namespace="/" extends="struts-default, json-default">
+		<result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<interceptors>
+			<interceptor name="authentication" class="gov.nia.nrs.web.AuthInterceptor" />
+			<interceptor-stack name="authStack">
+				<interceptor-ref name="authentication"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="authStack" />
+
+		<default-action-ref name="login" />
+
+		<global-results>
+			<result name="login" type="redirect">/login</result>
+			<result name="error" type="tiles">error</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<!--<exception-mapping exception="javax.xml.ws.soap.SOAPFaultException" result="home" />-->
+			<exception-mapping exception="java.lang.Exception" result="error" />
+			<!--<exception-mapping exception="gov.nia.suv.exception.ShowNoMenuException" result="errorNoMenu" />-->
+		</global-exception-mappings>
+		
+		
+	</package>
+</struts>

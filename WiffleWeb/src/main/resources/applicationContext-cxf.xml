@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:jaxrs-client="http://cxf.apache.org/jaxrs-client"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:jaxws="http://cxf.apache.org/jaxws"
+
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    										http://www.springframework.org/schema/beans/spring-beans.xsd
+    										http://cxf.apache.org/jaxws
+											http://cxf.apache.org/schemas/jaxws.xsd
+    									    http://cxf.apache.org/jaxrs-client http://cxf.apache.org/schemas/jaxrs-client.xsd">
+
+    <bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+
+    <jaxrs-client:client id="loginWebService" address="${webservice.url}"
+        serviceClass="gov.nia.nrs.ws.LoginWebService">
+        <jaxrs-client:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs-client:providers>
+    </jaxrs-client:client>
+
+    <jaxrs-client:client id="functionWebService" address="${webservice.url}"
+        serviceClass="gov.nia.nrs.ws.FunctionWebService">
+        <jaxrs-client:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs-client:providers>
+    </jaxrs-client:client>
+
+    <jaxrs-client:client id="governmentWebService" address="${webservice.url}"
+        serviceClass="gov.nia.nrs.ws.GovernmentWebService">
+        <jaxrs-client:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs-client:providers>
+    </jaxrs-client:client>
+
+    <jaxrs-client:client id="userDefWebService" address="${webservice.url}/userDef"
+        serviceClass="gov.nia.nrs.ws.UserDefWebService">
+        <jaxrs-client:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs-client:providers>
+    </jaxrs-client:client>
+
+    <jaxrs-client:client id="userApplyWebService" address="${webservice.url}/userApply"
+        serviceClass="gov.nia.nrs.ws.UserApplyWebService">
+        <jaxrs-client:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs-client:providers>
+    </jaxrs-client:client>
+
+     <!-- 機關代碼維護 -->
+	<jaxrs-client:client id="deptWebService" address="${webservice.url}/rs"
+		serviceClass="gov.nia.nrs.dept.ws.DeptWebService">
+		<jaxrs-client:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs-client:providers>
+	</jaxrs-client:client>
+
+	<!-- 多維度查詢 -->
+	<jaxrs-client:client id="multiQueryWebService" address="${webservice.url}/rs"
+		serviceClass="gov.nia.nrs.multiquery.ws.MultiQueryWebService">
+		<jaxrs-client:providers>
+			<ref bean="jsonProvider" />
+		</jaxrs-client:providers>
+	</jaxrs-client:client>
+
+	<!-- 稽核紀錄查詢 -->
+	<jaxrs-client:client id="auditQueryWebSevice" address="${webservice.url}/audit"
+        serviceClass="gov.nia.nrs.ws.AuditQueryWebSevice">
+        <jaxrs-client:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs-client:providers>
+    </jaxrs-client:client>
+    <jaxrs-client:client id="reportMgmtWebService" address="${webservice.url}/reportMgnt"
+        serviceClass="gov.nia.nrs.ws.ReportMgmtWebService">
+        <jaxrs-client:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs-client:providers>
+    </jaxrs-client:client>
+
+    <jaxrs-client:client id="reportWebService" address="${webservice.url}/report"
+        serviceClass="gov.nia.nrs.ws.ReportWebService">
+        <jaxrs-client:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs-client:providers>
+    </jaxrs-client:client>
+
+    <!-- codeData -->
+	<jaxrs-client:client id="commonWebService" address="${webservice.url}"
+        serviceClass="gov.nia.nrs.ws.CommonWebService">
+        <jaxrs-client:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs-client:providers>
+    </jaxrs-client:client>
+
+    <!-- queryData -->
+	<jaxrs-client:client id="dataQueryWebService" address="${webservice.url}/rs"
+        serviceClass="gov.nia.nrs.dataquery.ws.DataQueryWebService">
+        <jaxrs-client:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs-client:providers>
+    </jaxrs-client:client>
+
+    <!-- News -->
+	<jaxrs-client:client id="newsWebService" address="${webservice.url}/news"
+        serviceClass="gov.nia.nrs.news.ws.NewsWebService">
+        <jaxrs-client:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs-client:providers>
+    </jaxrs-client:client>
+
+	    <!-- 憑證驗證登入
+	<jaxws:client id="loginIcService" serviceClass="gov.nia.psa.login.ws.LoginICService"
+		address="${loginIC.url}/LoginICService/LoginICService" />
+		-->
+</beans>

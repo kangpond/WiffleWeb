@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/* CSS Document */
+section.toDo .more, section.announce .more, section.shared .more, section.law .more, section.Dashboard h2 .more { position:absolute; top:15px; right:5px;}
+section.toDo .more a { background-color:#9e8662;}
+section.toDo, section.announce, section.shared, section.law, section.Dashboard { margin-bottom:30px; position:relative;}
+section.toDo h2 span, section.announce h2 span, section.shared h2 span, section.law h2 span, section.Dashboard h2 span { padding-right:40px;background:url(../images/h2_span.png) no-repeat right 8px;}
+section.toDo h2, section.announce h2, section.shared h2, section.law h2, section.Dashboard h2 {
+	margin: 0 0 15px;
+	padding: 5px 15px 5px 0;
+	background: none;
+	border-style: none;
+	border-bottom:4px solid #5a5856;
+}
+section.toDo ul, section.announce ul, section.shared ul, section.law ul { margin: 0; padding:0; }
+section.toDo ul li, section.announce ul li, section.shared ul li, section.law ul li {
+	padding: 0 0 10px 20px;
+	margin: 0 0 10px 0px;
+	background: url(../images/li_icon.png) no-repeat 5px 5px;
+	border-bottom: 1px dotted #c9b28a;
+	position: relative;
+	display: block;
+	line-height: normal;
+}
+section.toDo ul li a {
+	margin-right: 15px;
+	text-align: left;
+	color: #614a22;
+	text-decoration: none;
+}
+section.toDo ul li span.items {color: #614a22; margin: 0 0 0 3px; /*color: #017e9e;*/ }
+section.announce ul li a, section.shared ul li a, section.law ul li a {
+	display: block;
+	margin-right: 120px;
+	text-align: left;
+	color: #614a22;
+	text-decoration: none;
+}
+section.toDo ul li span.date, section.announce ul li span.date, section.shared ul li span.date, section.law ul li span.date {
+	text-align: right;
+	display: block;
+	width: 90px;
+	right: 0;
+	position: absolute;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	color: #9e8662;
+	font: 1em Verdana, Geneva, sans-serif;
+}
+section.toDo ul li a:hover, section.announce ul li a:hover, section.shared ul li a:hover, section.law ul li a:hover { color:#C00;}
+
+section.Dashboard table { width:100%; border-collapse: collapse;}
+section.Dashboard table td { width:50%; text-align:center; vertical-align:top; padding:15px 10px;}
+section.Dashboard h3 {font-size:1.562em; text-align:left; color: #999; margin:0 0 20px;}
+section.Dashboard h3 span { font-size:1.313em; font-family:Arial, Helvetica, sans-serif; color:#09C;}
+/*--首頁頁韱修正jquery-ui.css--*/
+.mp .ui-widget, .sp .ui-widget {font-family: "微軟正黑體",Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;}/*--第189行--*/
+/* Tabs overrides */
+.mp .ui-tabs .ui-tabs-nav .ui-tabs-anchor { font-size:1.188em;}/*--第180行--*/
+.mp .ui-tabs, .sp .ui-tabs { 
+    padding: 0px; 
+    background: none; 
+    border-width: 0px; 
+} 
+.mp .ui-tabs .ui-tabs-nav, .sp .ui-tabs .ui-tabs-nav { 
+    padding-left: 0px; 
+    background: transparent; 
+    border-width: 0px 0px 1px 0px; 
+	border-color: #ddd;
+    -moz-border-radius: 0px; 
+    -webkit-border-radius: 0px; 
+    border-radius: 0px; 
+} 
+.mp .ui-tabs-nav .ui-state-active, .sp .ui-tabs-nav .ui-state-active, .mp .ui-state-default, .sp .ui-state-default {
+	border-color: #ddd;
+}
+.mp .ui-tabs .ui-tabs-panel, .sp .ui-tabs .ui-tabs-panel {
+	padding: 1em;
+    background: #fff none; 
+    border-width: 0px 1px 1px 1px; 
+}
+h3.newResident { font-size:23px; margin:20px 0 10px; text-align:center; color:#666;}

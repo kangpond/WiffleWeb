@@ -1,0 +1,97 @@
+@charset "UTF-8";
+/* CSS Document */
+.inaccesible li ul { display:none; }
+.header { z-index:3000; }/*修正IE7，解決滑出選單被下方的區塊蓋住的問題*/
+/*-------------------------------------menu at header*/
+/* Top選單
+.top .mlmenu {
+	margin: 0 auto;
+	text-align: center; display:block;
+	vertical-align:middle;
+	clear: both;
+	overflow: inherit;  /*----firefox 設hidden時 layer會不見要設回inherit----*/
+	 /*-_overflow: hidden; ---IE6 高度太高時要用hidde
+	padding: 0;
+	background: #007e9d url(../images/inputArea_bg.png) repeat-x top left;
+	height:40px;
+}----*/
+.top .menubg ul{
+	z-index: 2000;
+	margin: 0 auto;
+	padding: 5px 30px 0; 
+}
+.top .menubg li{ display: inline-block; position: relative; line-height: 160%; padding: 0; 	*float: left;font-size: 1.063em; }
+.top .menubg li a{
+	text-decoration: none;
+	float: left;
+	display: inline-block;
+	border-top: none;
+	width: auto;
+	cursor:pointer;
+    color: #FFFFFF; padding: 3px 10px; letter-spacing: 0.05em; 
+}
+.top .menubg li.here a{
+	color: #FC0;	
+}
+.top .menubg ul ul { 
+	position: absolute; 
+	left: 0;
+	display: block;
+	height: auto;
+	z-index:999999;
+	display:none;    /*------預設選單先關掉,再由js控制load完所有資料再出再----------*/
+	list-style-type: none;
+	margin:27px 0 0 5px;
+	padding:0;
+	background: #FFFFFF;
+	border: 4px solid #007e9d;
+	border-radius:0 0 6px 6px;
+	text-align: left;
+}
+.top .menubg li li {
+    clear: left;
+	border-bottom: 1px solid #007e9d;
+	border-right: 0px;
+	margin:0;
+	padding:0;
+}
+.top .menubg li li a { color: #006273; font-size: 0.875em; display: block; line-height: 160%; padding: 10px; background: #FFFFFF; font-weight: normal; width: 120px; }
+.top .menubg li li a:hover{
+	text-decoration: none;
+	color: #FFFFFF;
+	background: #0092aa none;
+}
+.top .menubg li li a.here{ line-height:25px;}
+.top .menubg li li a.here,.top .menubg li li li a.here,.top .menubg li li li li a.here  {
+	font-weight: normal;
+	color: #000;
+	display:block;
+	line-height: 25px;	
+}
+.top .menubg ul ul ul{
+	position: absolute;
+	left: 0px;
+	*left: auto;
+	margin-top: -1px;
+	margin-left: 140px;
+	*margin-left: 0px;	
+}
+.top .menubg li li li a{z-index:12;}
+.top .menubg li li li li a{z-index:13;}	 */
+/*-------------------------------------menu at left*/
+.leftbg .menubg { margin:0; padding:0; width:250px; font-size:18px;line-height:17px;}
+.leftbg .menubg a { display:block; text-decoration:none; color:#fff;}
+.leftbg .menubg a:hover { text-decoration:none; }
+.leftbg .menubg li { position:relative;}
+.leftbg .menubg ul {list-style:none; margin:0; padding:0; position:relative; z-index:3000; }/*z-index:3000; 修正IE7，解決滑出選單被下方的區塊蓋住的問題*/
+.leftbg .menubg>ul>li { margin:0;}
+.leftbg .menubg>ul>li>a { border-top: 1px solid #515151; border-bottom: 1px solid #000; padding: 10px 20px 10px 15px; background: #333333 url(../images/icon01.png) no-repeat right center; }
+.leftbg .menubg>ul>li:hover>a {color: #FC0;}
+.leftbg .menubg>ul>li.here>a {background:#000 url(../images/icon02.png) no-repeat right center;}
+/*---------------第二層*/
+.leftbg .menubg ul ul { background:#fff; font-size:14px; padding:0; margin:0;}
+.leftbg .menubg ul ul li { padding:0; margin:0;}
+.leftbg .menubg ul ul li a { color: #FFF; padding: 11px 20px 11px 32px; border-bottom: 1px solid #58d6e5; background-color: #02adc1; }
+.leftbg .menubg ul ul li:hover>a { background-color: #0197a9; color: #FF0; }
+/*---------------第二層*/
+.leftbg .menubg ul ul ul { left:190px;}
