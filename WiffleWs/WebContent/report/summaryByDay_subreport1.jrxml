@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="summaryByDay_subreport1" pageWidth="600" pageHeight="555" orientation="Landscape" columnWidth="600" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.7715610000000015"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="cnt" class="java.math.BigDecimal"/>
+	<field name="userName" class="java.lang.String"/>
+	<field name="functionName" class="java.lang.String"/>
+	<field name="type" class="java.lang.String"/>
+	<variable name="summary" class="java.math.BigDecimal" resetType="Group" resetGroup="Summary" calculation="Sum">
+		<variableExpression><![CDATA[$F{cnt}]]></variableExpression>
+	</variable>
+	<group name="Summary">
+		<groupExpression><![CDATA[$F{userName}]]></groupExpression>
+		<groupFooter>
+			<band height="23">
+				<staticText>
+					<reportElement x="0" y="0" width="349" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="標楷體" size="12" pdfFontName="MHei-Medium" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[合計]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="349" y="0" width="110" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="標楷體" size="12" pdfFontName="MHei-Medium" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{summary}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="20">
+			<staticText>
+				<reportElement x="239" y="0" width="110" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[使用者姓名]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="349" y="0" width="110" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[操作次數]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="239" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[功能名稱]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="349" y="0" width="110" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" pdfFontName="MHei-Medium" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{cnt}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="239" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" pdfFontName="MHei-Medium" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{functionName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="239" y="0" width="110" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="標楷體" size="12" pdfFontName="MHei-Medium" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{userName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

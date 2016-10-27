@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+	<bean id="immDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="${jdbc.dataSource.driverClassName}" />
+		<property name="jdbcUrl" value="${imm.dataSource.url}" />
+		<property name="user" value="${imm.dataSource.username}" />
+		<property name="password" value="${imm.dataSource.pawd}" />
+
+		<property name="autoCommitOnClose" value="false" /><!-- 連接關閉時默認將所有未提交的操作回滾。 Default: false -->
+		<!-- 當連接池用完時客戶端調用getConnection()後等待獲取新連接的時間，超時後將拋出SQLException,如設為0則無限期等待。單位毫秒。 Default: 0 -->
+		<property name="checkoutTimeout" value="${jdbc.checkoutTimeout}" />
+		<!-- JDBC的標準參數，用以控制數據源內加載的PreparedStatements數量。 但由於預緩存的statements屬於單個connection而不是整個連接池。 所以設置這個參數需要考慮到多方面的因素。如果maxStatements與maxStatementsPerConnection均為0，則緩存被關閉。 
+			Default: 0 -->
+		<property name="maxStatements" value="0" />
+
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
+		<!-- 連接池中保留的最小連接數。 -->
+		<property name="minPoolSize" value="${jdbc.minPoolSize}" />
+		<!-- 連接池中保留的最大連接數。 Default: 15 -->
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+		<!-- 最大空閒時間,180秒內未使用則連接被丟棄。若為0則永不丟棄。 Default: 0 -->
+		<property name="maxIdleTime" value="180" />
+		<property name="maxIdleTimeExcessConnections" value="120" />
+		<property name="idleConnectionTestPeriod" value="120" /><!-- 每120秒檢查所有連接池中的空閒連接。Default: 0 -->
+		<property name="acquireIncrement" value="3" /><!--當連接池中的連接耗盡的時候c3p0一次同時獲取的連接數。 Default: 3 -->
+		<property name="acquireRetryDelay" value="1000" /><!--兩次連接中間隔時間，單位毫秒。 Default: 1000 -->
+		<property name="acquireRetryAttempts" value="30" /><!-- 定義在從數據庫獲取新連接失敗後重複嘗試的次數。Default: 30 -->
+		<!-- 獲取連接失敗將會引起所有等待連接池來獲取連接的線程拋出異常。 但是數據源仍有效 保留，並在下次調用getConnection()的時候繼續嘗試獲取連接。 如果設為true，那麼在嘗試 獲取連接失敗後該數據源將申明已斷開並永久關閉。Default: false -->
+		<property name="breakAfterAcquireFailure" value="false" />
+		<!-- 因性能消耗大請只在需要的時候使用它。如果設為true那麼在每個connection提交的 時候都將校驗其有效性。 建議使用idleConnectionTestPeriod或automaticTestTable等方法來提升連接測試的性能。Default: false -->
+		<property name="testConnectionOnCheckout" value="false" />
+		<property name="unreturnedConnectionTimeout" value="60" />
+		<property name="debugUnreturnedConnectionStackTraces" value="true" />
+		<property name="numHelperThreads" value="6" />
+	</bean>
+
+	<bean id="immSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="immDataSource" />
+		<property name="packagesToScan" value="gov.nia.nrs.domain.imm" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">${jdbc.dataSource.showSql}</prop>
+				<prop key="hibernate.dialect">${jdbc.dataSource.dialect}</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="immTransactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="immSessionFactory" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="immTransactionManager" />
+</beans>

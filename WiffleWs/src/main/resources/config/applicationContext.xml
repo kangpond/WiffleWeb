@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:cxf="http://cxf.apache.org/core"
+    xmlns:jaxws="http://cxf.apache.org/jaxws"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+    http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+    http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd ">
+
+	<!-- DB jdbc.properties & 系統參數-->
+	<bean class="gov.nia.nrs.system.jdbc.DecryptPropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:config/env.properties</value>
+				<value>classpath:config/jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+
+    <import resource="applicationContext-datasource-imm.xml"/>
+    <import resource="applicationContext-datasource-iis.xml"/>
+    <import resource="applicationContext-datasource-nrs.xml"/>
+    <import resource="applicationContext-datasource-security.xml"/>
+    <import resource="applicationContext-cxf.xml" />
+    <import resource="applicationContext-aop.xml" />
+    <import resource="applicationContext-ehcache.xml" />
+
+	<!-- common check for all service
+  	<bean id="authChkInterceptor" class="gov.nia.cp.soap.AuthChkInterceptor"/>
+	<cxf:bus>
+		<cxf:inInterceptors>
+			<ref bean="authChkInterceptor" />
+        </cxf:inInterceptors>
+	</cxf:bus>
+    -->
+</beans>

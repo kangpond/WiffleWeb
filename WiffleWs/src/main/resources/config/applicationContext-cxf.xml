@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+	http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+    <import resource="classpath:META-INF/cxf/cxf.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+    <bean id="jsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+
+	 	<!-- restful web service -->
+	<jaxrs:server address="/rs" />
+	<context:component-scan base-package="gov.nia.nrs">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+    <jaxrs:server address="/">
+        <jaxrs:serviceBeans>
+            <bean class="gov.nia.nrs.ws.LoginWebServiceImpl" />
+            <bean class="gov.nia.nrs.ws.FunctionWebServiceImpl" />
+            <bean class="gov.nia.nrs.ws.GovernmentWebServiceImpl" />
+            <bean class="gov.nia.nrs.ws.CommonWebServiceImpl" />
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs:providers>
+        <jaxrs:properties>
+            <entry key="attachment-memory-threshold" value="52428800" />
+            <entry key="attachment-max-size" value="52428800" />
+        </jaxrs:properties>
+    </jaxrs:server>
+
+    <jaxrs:server address="/userDef">
+        <jaxrs:serviceBeans>
+            <bean class="gov.nia.nrs.ws.UserDefWebServiceImpl" />
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs:providers>
+    </jaxrs:server>
+
+    <jaxrs:server address="/userApply">
+        <jaxrs:serviceBeans>
+            <bean class="gov.nia.nrs.ws.UserApplyWebServiceImpl" />
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs:providers>
+    </jaxrs:server>
+
+    <jaxrs:server address="/reportMgnt">
+        <jaxrs:serviceBeans>
+            <bean class="gov.nia.nrs.ws.ReportMgmtWebServiceImpl" />
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs:providers>
+    </jaxrs:server>
+    <jaxrs:server address="/audit">
+        <jaxrs:serviceBeans>
+            <bean class="gov.nia.nrs.ws.AuditQueryWebSeviceImpl" />
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs:providers>
+    </jaxrs:server>
+
+    <jaxrs:server address="/report">
+        <jaxrs:serviceBeans>
+            <bean class="gov.nia.nrs.ws.ReportWebServiceImpl" />
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs:providers>
+    </jaxrs:server>
+
+     <jaxrs:server address="/news">
+        <jaxrs:serviceBeans>
+            <bean class="gov.nia.nrs.ws.NewsWebServiceImpl" />
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <ref bean="jsonProvider" />
+        </jaxrs:providers>
+    </jaxrs:server>
+
+</beans>
