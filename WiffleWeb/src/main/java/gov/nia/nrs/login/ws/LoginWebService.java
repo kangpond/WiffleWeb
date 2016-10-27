@@ -1,7 +1,7 @@
 /**
  * 
  */
-package gov.nia.nrs.ws;
+package gov.nia.nrs.login.ws;
 
 import gov.nia.nrs.bean.UserProfile;
 
