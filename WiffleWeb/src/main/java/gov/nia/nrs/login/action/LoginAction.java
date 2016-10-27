@@ -2,17 +2,11 @@ package gov.nia.nrs.login.action;
 
 import gov.nia.nrs.action.BaseAction;
 import gov.nia.nrs.bean.UserProfile;
-import gov.nia.nrs.domain.Functions;
 import gov.nia.nrs.login.bean.LoginICForm;
+import gov.nia.nrs.login.ws.LoginWebService;
 import gov.nia.nrs.utils.StringUtil;
-import gov.nia.nrs.ws.LoginWebService;
-import gov.nia.ssrs.url.SSrsParamVal;
 
 import java.security.cert.X509Certificate;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -27,7 +21,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import tw.com.chttl.CertUtil;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Namespace("/")
 public class LoginAction extends BaseAction
@@ -35,29 +28,8 @@ public class LoginAction extends BaseAction
 	private static final long serialVersionUID = 1065628500030886171L;
 	private static final Logger logger = Logger.getLogger(LoginAction.class);
 
-
 	@Autowired
-    private LoginWebService loginWebService;
-
-	//SSRS Report
-	private String pic1;
-	private String pic2;
-
-    public String getPic1() {
-        return pic1;
-    }
-
-    public void setPic1(String pic1) {
-        this.pic1 = pic1;
-    }
-
-    public String getPic2() {
-        return pic2;
-    }
-
-    public void setPic2(String pic2) {
-        this.pic2 = pic2;
-    }
+	private LoginWebService loginWebService;
 
 	private LoginICForm loginIcForm;
 
@@ -155,12 +127,14 @@ public class LoginAction extends BaseAction
 	{
 		String msg = "";
 		UserProfile userProfile = loginWebService.auth(loginIcForm.getPersonId(), loginIcForm.getCertSn());
-		if (userProfile != null && StringUtils.isEmpty(userProfile.getErrMsg())) {
-            getHttpSession().setAttribute("userProfile", userProfile);
-            getHttpSession().setAttribute("menu", makeMenu(userProfile));
-        } else {
-        	msg = userProfile.getErrMsg();
-        }
+		if (userProfile != null && StringUtils.isEmpty(userProfile.getErrMsg()))
+		{
+			getHttpSession().setAttribute("userProfile", userProfile);
+		}
+		else
+		{
+			msg = userProfile.getErrMsg();
+		}
 		return msg;
 	}
 
@@ -185,10 +159,6 @@ public class LoginAction extends BaseAction
 			{
 				return INPUT;
 			}
-
-			pic1 = main.callSSRSMain("DashBoard_01", SSrsParamVal.IMAGE, "");
-	        pic2 = main.callSSRSMain("DashBoard_02", SSrsParamVal.IMAGE, "");
-
 			return SUCCESS;
 		}
 		catch (Exception e)
@@ -203,12 +173,13 @@ public class LoginAction extends BaseAction
 	public String logout() throws Exception
 	{
 		logger.debug("logout");
-		 HttpSession session = getHttpSession();
+		HttpSession session = getHttpSession();
 
-        if (session != null) {
-            session.removeAttribute("userProfile");
-            session.invalidate();
-        }
+		if (session != null)
+		{
+			session.removeAttribute("userProfile");
+			session.invalidate();
+		}
 		return SUCCESS;
 	}
 
@@ -221,34 +192,4 @@ public class LoginAction extends BaseAction
 	{
 		this.loginIcForm = loginIcForm;
 	}
-
-
-	/**
-     * @param userProfile
-     * @throws JsonProcessingException
-     */
-    private String makeMenu(UserProfile userProfile) throws JsonProcessingException {
-        List<Map<String, Object>> menu = new ArrayList<Map<String, Object>>();
-        for (Functions function : userProfile.getFunctions()) {
-            Map<String, Object> attributes = new HashMap<String, Object>();
-            String path = "";
-            if (StringUtils.equals("#", function.getLinkUrl())) {
-                path = "/" + function.getLinkUrl();
-            } else {
-                path = function.getLinkUrl();
-                path += "?maintainFunctionId="+function.getFunctionId();
-            }
-            attributes.put("href", getRequest().getContextPath() + path);
-
-            Map<String, Object> item = new HashMap<String, Object>();
-            item.put("id", function.getFunctionId());
-            item.put("parent", StringUtils.isBlank(function.getUpperFunctionId()) ? "#" : function.getUpperFunctionId());
-            item.put("text", function.getFunctionName());
-            item.put("a_attr", attributes);
-
-            menu.add(item);
-        }
-        System.out.println(menu);
-        return new ObjectMapper().writeValueAsString(menu);
-    }
 }

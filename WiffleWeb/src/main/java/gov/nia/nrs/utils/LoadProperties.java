@@ -1,6 +1,5 @@
 package gov.nia.nrs.utils;
 
-import java.awt.Color;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -26,48 +25,12 @@ public class LoadProperties {
     private static Logger logger = LoggerFactory.getLogger(LoadProperties.class);
 
     private static Map<String, String> constMap;
-    private static String ssrsUrl;
-    private static String ssrsPid;
-    private static String ssrsPwd;
-    private static String newsDocDir;
     public static Map<String, String> getConstMap() {
         return constMap;
     }
 
     public static void setConstMap(Map<String, String> constMap) {
         LoadProperties.constMap = constMap;
-    }
-
-    public static String getSsrsUrl() {
-        return ssrsUrl;
-    }
-
-    public static void setSsrsUrl(String ssrsUrl) {
-        LoadProperties.ssrsUrl = ssrsUrl;
-    }
-
-    public static String getSsrsPid() {
-        return ssrsPid;
-    }
-
-    public static void setSsrsPid(String ssrsPid) {
-        LoadProperties.ssrsPid = ssrsPid;
-    }
-
-    public static String getSsrsPwd() {
-        return ssrsPwd;
-    }
-
-    public static void setSsrsPwd(String ssrsPwd) {
-        LoadProperties.ssrsPwd = ssrsPwd;
-    }
-
-    public static String getNewsDocDir() {
-        return newsDocDir;
-    }
-
-    public static void setNewsDocDir(String newsDocDir) {
-        LoadProperties.newsDocDir = newsDocDir;
     }
 
     public final static Map<String, String> loadProperties(String fileName) {
